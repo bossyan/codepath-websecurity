@@ -70,12 +70,21 @@ The following advanced user stories are optional:
 Here's a walkthrough of implemented user stories:
 
 User Walkthrough
+
+Link to GIF: http://i.imgur.com/qHVBkc1.gif
+
 <img src="http://i.imgur.com/qHVBkc1.gif" title='User Walkthrough' alt='User Walkthrough' />
 
 Salespeople Walkthrough
+
+Link to GIF: http://i.imgur.com/dNT14Dm.gif
+
 <img src="http://i.imgur.com/dNT14Dm.gif" title="Salespeople Walkthrough" alt="Salespeople Walkthrough" />
 
 States and Territory Walkthrough
+
+Link to GIF: http://i.imgur.com/aLUYAsV.gif
+
 <img src="http://i.imgur.com/aLUYAsV.gif" title="States and Territory Walkthrough" alt="States and Territory Walkthrough" />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
