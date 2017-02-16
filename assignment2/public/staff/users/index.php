@@ -24,9 +24,9 @@
     echo "</tr>";
     while($user = db_fetch_assoc($users_result)) {
       echo "<tr>";
-      echo "<td>" . $user['first_name'] . "</td>";
-      echo "<td>" . $user['last_name'] . "</td>";
-      echo "<td>" . $user['username'] . "</td>";
+      echo "<td>" . h($user['first_name']) . "</td>";
+      echo "<td>" . h($user['last_name']) . "</td>";
+      echo "<td>" . h($user['username']) . "</td>";
       echo "<td>";
       echo "<a href=\"show.php?id=" . $user['id'] . "\">Show</a>";
       echo "</td>";

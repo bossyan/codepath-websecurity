@@ -14,9 +14,13 @@ $salesperson = [
 $errors = [];
 
 if(is_post_request()) {
-    $errors = validate_salesperson($salesperson);
-
-    insert_salesperson($salesperson);
+    $result = insert_salesperson($salesperson);
+    if($result === true) {
+      $new_id = db_insert_id($db);
+      redirect_to('show.php?id=' . $new_id);
+    } else {
+      $errors = $result;
+    }
 }
 
 ?>
@@ -27,15 +31,15 @@ if(is_post_request()) {
   <h1>New Salesperson</h1>
   <?php echo display_errors($errors); ?>
 
-  <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+  <form method="POST" action="<?php echo h($_SERVER["PHP_SELF"]); ?>">
     <p>First name:</p>
-    <input name="first_name" type="text" value="<?php echo $salesperson['first_name']; ?>"/>
+    <input name="first_name" type="text" value="<?php echo h($salesperson['first_name']); ?>"/>
     <p>Last name:</p>
-    <input name="last_name" type="text" value="<?php echo $salesperson['last_name']; ?>" />
+    <input name="last_name" type="text" value="<?php echo h($salesperson['last_name']); ?>" />
     <p>Email:</p>
-    <input name="email" type="text" value="<?php echo $salesperson['email']; ?>"/>
+    <input name="email" type="text" value="<?php echo h($salesperson['email']); ?>"/>
     <p>Phone Number:</p>
-    <input name="phone" type="text" value="<?php echo $salesperson['phone']; ?>"/>
+    <input name="phone" type="text" value="<?php echo h($salesperson['phone']); ?>"/>
     <br />
     <br />
     <button type="submit">Create</button>

@@ -23,25 +23,49 @@
   function has_valid_email_format($value) {
     // Function can be improved later to check for
     // more than just '@'.
-    return strpos($value, '@') !== false;
+    return preg_match("/^[A-Za-z0-9@._]+$/", $value);
   }
 
 
-  /*
-   My custom validation
+  /**
+   * My custom validation
+   * Check if it's a valid phone number that contains number, parenthesis, or dash
+   * @param  string  $number phone number
+   * @return boolean true if valid phone number
    */
-  // has_valid_phone_number_format('(415)493-5033')
   function has_valid_phone_number_format($number) {
     return preg_match("/^[0-9 ()-]+$/", $number);
   }
 
-  // filterId('5')
-  // returns 5
-  // filterId('; cat /etc/password')
-  // returns null
-  function filterId($id)
+  /**
+   * My custom validation
+   * Checks if it's a number
+   * @param  mixed  $number
+   * @return boolean true if valid number
+   */
+  function isNumber($number)
   {
-    return filter_input($id, 'id', FILTER_VALIDATE_INT);
+    return preg_match("/^[0-9]+$/", $number);
+  }
+
+  /**
+   * My custom validation
+   * Checks if input is a valid username containing alphanum, and underscore
+   * @param  string  $username
+   * @return boolean
+   */
+  function has_valid_username($username) {
+    return preg_match("/^[A-Za-z0-9_]+$/", $username);
+  }
+
+  /**
+   * My custom validation
+   * Checks if input has a valid state code
+   * @param  string  $code
+   * @return boolean
+   */
+  function has_valid_state_code($code) {
+    return preg_match("/^[A-Z]+$/", $code);
   }
 
 ?>
