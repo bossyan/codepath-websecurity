@@ -6,37 +6,41 @@ Time spent: 1-2 hours spent in total
 
 ## Pentesting Report
 
-1. (Required) Vulnerability Name or ID
+1. (Required) WordPress <= 4.2.2 - Authenticated Stored Cross-Site Scripting (XSS)
   - [x] Summary:
-    - Vulnerability types: WordPress <= 4.2.2 - Authenticated Stored Cross-Site Scripting (XSS)
+    - Vulnerability types: XSS
     - Tested in version: 4.2.2
     - Fixed in version: 4.2.3
   - [x] GIF Walkthrough:
     Link: http://imgur.com/j4wdJy2
-    [img]http://i.imgur.com/j4wdJy2.gif[/img]
+
+    <img src="http://i.imgur.com/j4wdJy2.gif" title="Video Walkthrough" width="" alt="Video Walkthrough" data-canonical-src="http://i.imgur.com/cPltU29.gif" style="max-width:100%;">
   - [x] Steps to recreate: Add a post. In the text, add `<a href="[caption code=">]</a><a title=" onmouseover=alert('test')  ">link</a>` and publish
   - [x] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/changeset/33359)
     - [Link 2](https://core.trac.wordpress.org/changeset/33357)
-1. (Required) Vulnerability Name or ID
+1. (Required) WordPress 2.5-4.6 - Authenticated Stored Cross-Site Scripting via Image Filename
   - [x] Summary:
-    - Vulnerability types: WordPress 2.5-4.6 - Authenticated Stored Cross-Site Scripting via Image Filename
+    - Vulnerability types: XSS
     - Tested in version: 4.2.2
     - Fixed in version: 4.2.10
   - [x] GIF Walkthrough:
     Link: http://imgur.com/3drxALY
-    [img]http://i.imgur.com/3drxALY.gif[/img]
+
+    <img src="http://i.imgur.com/3drxALY.gif" title="Video Walkthrough" width="" alt="Video Walkthrough" data-canonical-src="http://i.imgur.com/cPltU29.gif" style="max-width:100%;">
   - [x] Steps to recreate: Upload an image called `a<img src=a onerror=alert(document.cookie)>.jpg` in Media Library, then view attachment page
   - [x] Affected source code:
     - [Link 1](https://github.com/WordPress/WordPress/commit/c9e60dab176635d4bfaaf431c0ea891e4726d6e0)
-1. (Required) Vulnerability Name or ID
+1. (Required) WordPress <= 4.3 - Authenticated Shortcode Tags Cross-Site Scripting (XSS) (Similar to #1 XSS vunerability)
   - [x] Summary:
-    - Vulnerability types: WordPress <= 4.3 - Authenticated Shortcode Tags Cross-Site Scripting (XSS) (Similar to #1 XSS vunerability)
+    - Vulnerability types: XSS
     - Tested in version: 4.2.2
     - Fixed in version: 4.2.5
   - [x] GIF Walkthrough:
     Link: http://imgur.com/YOEjusK
-    [img]http://i.imgur.com/YOEjusK.gif[/img]
+
+    <img src="http://i.imgur.com/YOEjusK.gif" title="Video Walkthrough" width="" alt="Video Walkthrough" data-canonical-src="http://i.imgur.com/cPltU29.gif" style="max-width:100%;">
+
   - [x] Steps to recreate: Add a post. In the text, add `TEST!!![caption width="1" caption='<a href="' ">]</a><a href="http://onMouseOver='alert(1)'">Click me</a>` and publish.
   - [x] Affected source code:
     - [Link 1](https://github.com/WordPress/WordPress/commit/f91a5fd10ea7245e5b41e288624819a37adf290a)
